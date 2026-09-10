@@ -12,51 +12,49 @@
 
 #include "ft_printf.h"
 
-static int	*ft_specifier(va_list lst, char format)
+static int	ft_specifier(va_list lst, char format)
 {
-	int *counter;
+	int counter;
 
-	counter = NULL;
+	counter = 0;
 	if(format == 'c')
-		ft_print_char(counter, va_arg(lst, int));
-	if(format == 's')
-		ft_print_str(counter, va_arg(lst, char *));
-	if(format == 'p')
-		ft_print_ptr(counter, va_arg(lst, unsigned long));
-	if(format == 'd' || format == 'i')
-		ft_print_nbr(counter, va_arg(lst, int));
-	if(format == 'u')
-		ft_print_unnbr(counter, va_arg(lst, unsigned int));
-	if(format == 'x' || format == 'X')
-		ft_print_unnbr(counter, va_arg(lst, unsigned int));
-	if(format == '%')
-		ft_print_char(counter, '%');
+		ft_print_char(&counter, va_arg(lst, int));
+	else if(format == 's')
+		ft_print_str(&counter, va_arg(lst, char *));
+	else if(format == 'p')
+		ft_print_ptr(&counter, va_arg(lst, unsigned long));
+	else if(format == 'd' || format == 'i')
+		ft_print_nbr(&counter, va_arg(lst, int));
+	else if(format == 'u')
+		ft_print_unnbr(&counter, va_arg(lst, unsigned int));
+	else if(format == 'x' || format == 'X')
+		ft_print_hex(&counter, va_arg(lst, unsigned int), format);
+	else if(format == '%')
+		ft_print_char(&counter, '%');
 	return(counter);
 }
 
 int ft_printf(const char *format, ...)
 {
 	va_list lst;
-	int i;
 	int len;
 	
 	len = 0;
-	i = 0;
+	if (!format)
+		return (-1);
 	va_start(lst, format);
-	
-	while(format[i])
+	while(*format)
 	{
-		if(format[i] == '%')
+		if(*format == '%')
 		{
-			i++;
-			len += *(ft_specifier(lst, format[i]));
+			format++;
+			if (!*format)
+                break;
+			len += ft_specifier(lst, *format);
 		}
 		else
-		{
-			write(1, &format[i], 1);
-			len++;
-		}
-		i++;
+			ft_print_char(&len, *format);
+		format++;
 	}
 	va_end(lst);
 	return(len);

@@ -14,7 +14,7 @@
 
 void	ft_print_unnbr(int *counter, unsigned int nbr)
 {
-	int a;
+	char	a;
 	
 	if (nbr >= 10)
 	{

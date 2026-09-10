@@ -17,10 +17,10 @@ void	ft_print_str(int *counter, char *str)
 	int i;
 	
 	i = 0;
-	if(!str)
+	if (!str)
 		str = "(null)";
-	while(str[i])
+	while (str[i])
 		i++;
 	write(1, str, i);
-	(*counter)+=i;
+	(*counter) += i;
 }

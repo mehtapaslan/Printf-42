@@ -16,11 +16,11 @@ void	ft_print_hex(int *counter, unsigned long nbr, char format)
 {
 	char	*str;
 
-	if(format == 'x')
+	if (format == 'x')
 		str = "0123456789abcdef";
 	else
 		str = "0123456789ABCDEF";
-	if(nbr >= 16)
+	if (nbr >= 16)
 	{
 		ft_print_hex(counter, nbr/16, format);
 		ft_print_hex(counter, nbr%16, format);

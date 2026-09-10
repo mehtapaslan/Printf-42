@@ -14,10 +14,10 @@
 
 void 	ft_print_ptr(int *counter, unsigned long ptr)
 {
-	if(!ptr)
+	if (!ptr)
 	{
 		write(1, "(nil)", 5);
-		(*counter)+=5;
+		(*counter) += 5;
 		return ;
 	}
 	write(1, "0x", 2);

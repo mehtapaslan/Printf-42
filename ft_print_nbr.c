@@ -14,12 +14,12 @@
 
 void	ft_print_nbr(int *counter, int nbr)
 {
-	int	a;
+	char	a;
 
 	if (nbr == -2147483648)
 	{
 		write (1, "-2147483648", 11);
-		(*counter)+=11;
+		(*counter) += 11;
 		return ;
 	}
 	if (nbr < 0)
