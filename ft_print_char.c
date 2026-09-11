@@ -6,13 +6,13 @@
 /*   By: mehaslan <mehaslan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 13:57:00 by mehaslan          #+#    #+#             */
-/*   Updated: 2026/09/09 20:47:03 by mehaslan         ###   ########.fr       */
+/*   Updated: 2026/09/12 00:31:57 by mehaslan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void 	ft_print_char(int *counter, char c)
+void	ft_print_char(int *counter, char c)
 {
 	write(1, &c, 1);
 	(*counter)++;

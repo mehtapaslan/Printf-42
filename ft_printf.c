@@ -6,7 +6,7 @@
 /*   By: mehaslan <mehaslan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/06 17:12:38 by mehaslan          #+#    #+#             */
-/*   Updated: 2026/09/09 21:01:15 by mehaslan         ###   ########.fr       */
+/*   Updated: 2026/09/12 00:37:09 by mehaslan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,42 +14,42 @@
 
 static int	ft_specifier(va_list lst, char format)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
-	if(format == 'c')
+	if (format == 'c')
 		ft_print_char(&counter, va_arg(lst, int));
-	else if(format == 's')
+	else if (format == 's')
 		ft_print_str(&counter, va_arg(lst, char *));
-	else if(format == 'p')
+	else if (format == 'p')
 		ft_print_ptr(&counter, va_arg(lst, unsigned long));
-	else if(format == 'd' || format == 'i')
+	else if (format == 'd' || format == 'i')
 		ft_print_nbr(&counter, va_arg(lst, int));
-	else if(format == 'u')
+	else if (format == 'u')
 		ft_print_unnbr(&counter, va_arg(lst, unsigned int));
-	else if(format == 'x' || format == 'X')
+	else if (format == 'x' || format == 'X')
 		ft_print_hex(&counter, va_arg(lst, unsigned int), format);
-	else if(format == '%')
+	else if (format == '%')
 		ft_print_char(&counter, '%');
-	return(counter);
+	return (counter);
 }
 
-int ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
-	va_list lst;
-	int len;
-	
+	va_list	lst;
+	int		len;
+
 	len = 0;
 	if (!format)
 		return (-1);
 	va_start(lst, format);
-	while(*format)
+	while (*format)
 	{
-		if(*format == '%')
+		if (*format == '%')
 		{
 			format++;
 			if (!*format)
-                break;
+				break ;
 			len += ft_specifier(lst, *format);
 		}
 		else
@@ -57,5 +57,5 @@ int ft_printf(const char *format, ...)
 		format++;
 	}
 	va_end(lst);
-	return(len);
+	return (len);
 }

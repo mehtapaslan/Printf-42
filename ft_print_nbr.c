@@ -6,7 +6,7 @@
 /*   By: mehaslan <mehaslan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/08 14:46:08 by mehaslan          #+#    #+#             */
-/*   Updated: 2026/09/09 20:51:03 by mehaslan         ###   ########.fr       */
+/*   Updated: 2026/09/12 00:33:47 by mehaslan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_print_nbr(int *counter, int nbr)
 
 	if (nbr == -2147483648)
 	{
-		write (1, "-2147483648", 11);
+		write(1, "-2147483648", 11);
 		(*counter) += 11;
 		return ;
 	}

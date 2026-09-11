@@ -6,7 +6,7 @@
 /*   By: mehaslan <mehaslan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/08 19:06:07 by mehaslan          #+#    #+#             */
-/*   Updated: 2026/09/09 20:47:06 by mehaslan         ###   ########.fr       */
+/*   Updated: 2026/09/12 00:32:52 by mehaslan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	ft_print_hex(int *counter, unsigned long nbr, char format)
 		str = "0123456789ABCDEF";
 	if (nbr >= 16)
 	{
-		ft_print_hex(counter, nbr/16, format);
-		ft_print_hex(counter, nbr%16, format);
+		ft_print_hex(counter, nbr / 16, format);
+		ft_print_hex(counter, nbr % 16, format);
 	}
 	else
 	{

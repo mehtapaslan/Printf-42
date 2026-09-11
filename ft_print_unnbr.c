@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_un.c                                      :+:      :+:    :+:   */
+/*   ft_print_unnbr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mehaslan <mehaslan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/08 18:39:46 by mehaslan          #+#    #+#             */
-/*   Updated: 2026/09/08 19:03:49 by mehaslan         ###   ########.fr       */
+/*   Updated: 2026/09/12 00:35:53 by mehaslan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_print_unnbr(int *counter, unsigned int nbr)
 {
 	char	a;
-	
+
 	if (nbr >= 10)
 	{
 		ft_print_unnbr(counter, nbr / 10);
